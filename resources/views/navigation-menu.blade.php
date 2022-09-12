@@ -11,7 +11,7 @@
                     <a href="{{ route('dashboard') }}">
                         {{-- <x-jet-application-mark class="block h-9 w-auto" /> --}}
                         <img class="animate__animated animate__bounceIn  rounded-full object-cover " style="width:5rem"
-                            src="{{ asset('img/LOGO_VALENCIA.jpg') }}" />
+                            src="{{ asset('img/GALCA.jpeg') }}" />
                     </a>
 
                 </div>
@@ -19,68 +19,12 @@
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                        {{ __('DISTRIBUCIONES VALENCIA') }}
+                        {{ __('GRUPO ALCA') }}
                     </x-jet-nav-link>
                 </div>
             </div>
 
             <div class="hidden sm:flex sm:items-center sm:ml-6">
-                <!-- Teams Dropdown -->
-                {{-- @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
-
-                    <div class="ml-3 relative">
-                        <x-jet-dropdown align="right" width="60">
-                            <x-slot name="trigger">
-                                <span class="inline-flex rounded-md">
-                                    <button type="button"
-                                        class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:bg-gray-50 hover:text-gray-700 focus:outline-none focus:bg-gray-50 active:bg-gray-50 transition">
-                                        {{ Auth::user()->currentTeam->name }}
-
-                                        <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg"
-                                            viewBox="0 0 20 20" fill="currentColor">
-                                            <path fill-rule="evenodd"
-                                                d="M10 3a1 1 0 01.707.293l3 3a1 1 0 01-1.414 1.414L10 5.414 7.707 7.707a1 1 0 01-1.414-1.414l3-3A1 1 0 0110 3zm-3.707 9.293a1 1 0 011.414 0L10 14.586l2.293-2.293a1 1 0 011.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
-                                                clip-rule="evenodd" />
-                                        </svg>
-                                    </button>
-                                </span>
-                            </x-slot>
-
-                            <x-slot name="content">
-                                <div class="w-60">
-                                    <!-- Team Management -->
-                                    <div class="block px-4 py-2 text-xs text-gray-400">
-                                        {{ __('Manage Team') }}
-                                    </div>
-
-                                    <!-- Team Settings -->
-                                    <x-jet-dropdown-link
-                                        href="{{ route('teams.show', Auth::user()->currentTeam->id) }}">
-                                        {{ __('Team Settings') }}
-                                    </x-jet-dropdown-link>
-
-                                    @can('create', Laravel\Jetstream\Jetstream::newTeamModel())
-                                        <x-jet-dropdown-link href="{{ route('teams.create') }}">
-                                            {{ __('Create New Team') }}
-                                        </x-jet-dropdown-link>
-                                    @endcan
-
-                                    <div class="border-t border-gray-100"></div>
-
-                                    <!-- Team Switcher -->
-                                    <div class="block px-4 py-2 text-xs text-gray-400">
-                                        {{ __('Switch Teams') }}
-                                    </div>
-
-                                    @foreach (Auth::user()->allTeams() as $team)
-                                        <x-jet-switchable-team :team="$team" />
-                                    @endforeach
-                                </div>
-                            </x-slot>
-                        </x-jet-dropdown>
-                    </div>
-
-                @endif --}}
 
                 <!-- Settings Dropdown -->
                 <div class="ml-3 relative">
@@ -161,11 +105,11 @@
 
     <!-- Responsive Navigation Menu -->
     <div :class="{ 'block': open, 'hidden': !open }" class="hidden sm:hidden">
-        <div class="pt-2 pb-3 space-y-1">
+        {{--  <div class="pt-2 pb-3 space-y-1">
             <x-jet-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-jet-responsive-nav-link>
-        </div>
+        </div>  --}}
 
         <!-- Responsive Settings Options -->
         <div class="pt-4 pb-1 border-t border-gray-200">
@@ -206,39 +150,6 @@
                         {{ __('Salir') }}
                     </x-jet-responsive-nav-link>
                 </form>
-
-                <!-- Team Management -->
-                {{-- @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
-                    <div class="border-t border-gray-200"></div>
-
-                    <div class="block px-4 py-2 text-xs text-gray-400">
-                        {{ __('Manage Team') }}
-                    </div>
-
-                    <!-- Team Settings -->
-                    <x-jet-responsive-nav-link href="{{ route('teams.show', Auth::user()->currentTeam->id) }}"
-                        :active="request()->routeIs('teams.show')">
-                        {{ __('Team Settings') }}
-                    </x-jet-responsive-nav-link> --}}
-
-                {{-- @can('create', Laravel\Jetstream\Jetstream::newTeamModel())
-                        <x-jet-responsive-nav-link href="{{ route('teams.create') }}"
-                            :active="request()->routeIs('teams.create')">
-                            {{ __('Create New Team') }}
-                        </x-jet-responsive-nav-link>
-                    @endcan
-
-                    <div class="border-t border-gray-200"></div>
-
-                    <!-- Team Switcher -->
-                    <div class="block px-4 py-2 text-xs text-gray-400">
-                        {{ __('Switch Teams') }}
-                    </div>
-
-                    @foreach (Auth::user()->allTeams() as $team)
-                        <x-jet-switchable-team :team="$team" component="jet-responsive-nav-link" />
-                    @endforeach
-                @endif --}}
             </div>
         </div>
     </div>
@@ -272,25 +183,21 @@
                         </div>
                         <!-- <ul class="dropdown-menu animated fadeInRight m-t-xs">
                                         <li><a class="dropdown-item" href="profile.html">Profile</a></li>
-                                        <li><a class="dropdown-item" href="contacts.html">Contacts</a></li>
+                                        {{--  <li><a class="dropdown-item" href="contacts.html">Contacts</a></li>
                                         <li><a class="dropdown-item" href="mailbox.html">Mailbox</a></li>
-                                        <li class="dropdown-divider"></li>
+                                        <li class="dropdown-divider"></li>  --}}
                                         <li><a class="dropdown-item" href="login.html">Logout</a></li>
                                     </ul> -->
                     </div>
-                    <div class="logo-element">
+                    {{--  <div class="logo-element">
                         IN+
-                    </div>
+                    </div>  --}}
                 </li>
-                <li>
+{{--                  <li>
                     <a href="{{ route('dashboard') }}"><i class="fa fa-area-chart" style="color:#ffffff;"
                             aria-hidden="true"></i> <span class="nav-label" style="color:#ffffff;">Dashboard</span>
                     </a>
-                    {{-- <ul class="nav nav-second-level">
-                                    <li href="dashboard_2.html"><a >Gestiones</a></li>
-                                    <li><a href="dashboard_2.html">Reportes de Usuario</a></li>
-                                </ul> --}}
-                </li>
+                </li>  --}}
                 <li>
                     <a><i class="fa-solid fa-user" style="color:#ffffff;"></i> <span class="nav-label"
                             style="color:#ffffff;">Usuarios</span>
@@ -346,7 +253,7 @@
 
                 </li>
 
-                <li>
+                {{--  <li>
                     <a><i class="fa-solid fa-box-open" style="color:#ffffff;"></i>
                         <span class="nav-label" style="color:#ffffff;">Ajustes</span>
                         <span class="fa arrow"></span></a>
@@ -355,7 +262,9 @@
                         <li><a href="/listado/ajustes" style="color:#ffffff;">Historial de Ajustes</a></li>
                         <li><a href="/inventario/tipoajuste" style="color:#ffffff;">Motivos de Ajuste</a></li>
                     </ul>
-                </li>
+                </li>  --}}
+
+
                 <li>
                     <a><i class="fa-solid fa-users" style="color:#ffffff;"></i> <span class="nav-label"
                             style="color:#ffffff;">Clientes</span>
@@ -377,7 +286,7 @@
                     </ul>
                 </li>
 
-                <li>
+                {{--  <li>
                     <a><i class="fa-solid fa-arrow-right-arrow-left text-white"></i>
                         <span class="nav-label" style="color:#ffffff;">Nota de Credito</span>
                         <span class="fa arrow"></span></a>
@@ -387,23 +296,23 @@
                         <li><a href="/nota/credito" style="color:#ffffff;">Crear devolución</a></li>
 
                     </ul>
-                </li>
+                </li>  --}}
 
-                <li>
+                {{--  <li>
                     <a><i class="fa-solid fa-magnifying-glass-dollar" style="color:#ffffff;"></i><span class="nav-label"
                             style="color:#ffffff;">Cuentas Por Cobrar</span>
                         <span class="fa arrow"></span></a>
 
                     <ul class="nav nav-second-level">
                         <li><a href="/cuentas/por/cobrar/listado" style="color:#ffffff;">Listado de Facturas</a></li>
-                        
+
 
                     </ul>
-                </li>
+                </li>  --}}
 
                 <li>
                     <a><i class="fa-solid fa-file-invoice" style="color:#ffffff;"></i><span class="nav-label"
-                            style="color:#ffffff;">Ventas Corporativas</span>
+                            style="color:#ffffff;">Ventas y Facturaciones</span>
                         <span class="fa arrow"></span></a>
 
                     <ul class="nav nav-second-level">
@@ -415,16 +324,16 @@
                             Cotizaciones</a></li>
 
                         @if(Auth::user()->rol_id == '2'  )
-                        
+
                         <li><a href="/facturas/corporativo/vendedor" style="color:#ffffff;">Listado de Facturas </a>
 
                         @else
                         <li><a href="/facturas/corporativo" style="color:#ffffff;">Listado de Facturas</a></li>
                         <li><a href="/facturas/corporativo/lista" style="color:#ffffff;">Listado de Facturas ND</a></li>
-                        
-                        @endif    
-                       
-                        
+
+                        @endif
+
+
                         </li>
 
                         <li><a href="/ventas/anulado/corporativo" style="color:#ffffff;">Listado de Facturas Anuladas
@@ -440,7 +349,7 @@
 
 
 
-                <li>
+                {{--  <li>
                     <a><i class="fa-solid fa-file-invoice" style="color:#ffffff;"></i><span class="nav-label"
                             style="color:#ffffff;">Ventas Gobierno</span>
                         <span class="fa arrow"></span></a>
@@ -448,24 +357,24 @@
                     <ul class="nav nav-second-level">
                         <li><a href="/ventas/estatal" style="color:#ffffff;">Facturacion</a></li>
                         <li><a href="/proforma/cotizacion/2" style="color:#ffffff;">Cotización </a></li>
-                        
-                       
+
+
                         @if(Auth::user()->rol_id == '2'  )
                         <li><a href="/ventas/estatal/vendedor" style="color:#ffffff;">Listado de Facturas</a></li>
                         @else
                         <li><a href="/facturas/estatal" style="color:#ffffff;">Listado de Facturas</a></li>
                         @endif
-                        
+
                         <li><a href="/ventas/anulado/estatal" style="color:#ffffff;">Listado de Facturas Anuladas </a>
                         </li>
                         <li><a href="/estatal/ordenes" style="color:#ffffff;">Numero de Orden Compra</a></li>
 
                     </ul>
                 </li>
+  --}}
 
 
-
-                <li>
+                {{--  <li>
                     <a><i class="fa-solid fa-file-invoice" style="color:#ffffff;"></i><span class="nav-label"
                             style="color:#ffffff;">Ventas exoneradas</span>
                         <span class="fa arrow"></span></a>
@@ -478,12 +387,12 @@
                         <li><a href="/estatal/exonerado" style="color:#ffffff;">Registro Exonerado</a></li>
 
                     </ul>
-                </li>
+                </li>  --}}
 
 
 
 
-                @if (Auth::user()->rol_id == '1')
+{{--                  @if (Auth::user()->rol_id == '1')
                     <li>
                         <a><i class="fa-solid fa-clipboard-check"  style="color:#ffffff;"></i><span class="nav-label"
                                 style="color:#ffffff;">Declaraciones </span>
@@ -501,9 +410,9 @@
 
                         </ul>
                     </li>
-                @endif
+                @endif  --}}
 
-                <li>
+{{--                  <li>
                     <a ><i class="fa-solid fa-truck-fast" style="color:#ffffff;"></i><span
                             class="nav-label" style="color:#ffffff;">Cardex</span>
                         <span class="fa arrow"></span></a>
@@ -512,7 +421,7 @@
                         <li><a href="/cardex" style="color:#ffffff;">Gestionar cardex</a></li>
 
                     </ul>
-                </li>
+                </li>  --}}
 
             </ul>
 

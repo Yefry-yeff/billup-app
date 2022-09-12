@@ -82,8 +82,8 @@ Route::get('/', function () {
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-   return view('/dashboard');
-    //return redirect('/bodega');
+   //return view('/dashboard');
+    return redirect('/producto/registro');
 })->name('dashboard');
 
 
@@ -161,7 +161,7 @@ Route::post('/factura/corporativo/anular', [ListadoFacturas::class,'anularVentaR
 Route::get('/facturas/corporativo/vendedor', LitsadoFacturasVendedor::class);
 Route::get('/lista/facturas/corporativo/vendedor', [LitsadoFacturasVendedor::class,'listarFacturasVendedor']);
 
-Route::get('/facturas/corporativo/lista', ListadoFacturasND::class); 
+Route::get('/facturas/corporativo/lista', ListadoFacturasND::class);
 Route::get('/facturas/corporativo/lista/nd', [ListadoFacturasND::class,'listarFacturas']);
 
 //-----------------------------------------------Usuarios-------------------------------------------------------------------------------------------//

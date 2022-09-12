@@ -888,7 +888,7 @@ h5 {
  /* background-color: #EC401B;*/
   color: white;
   font-weight: bold;
-   background: #b6b4b33f; 
+   background: #b6b4b33f;
 
 }
 .nav .open > a,
@@ -908,7 +908,7 @@ h5 {
 }
 .navbar-default {
   background-color: transparent;
-  border-color: #F15533;
+  border-color: #16a48a;
 }
 .navbar-top-links li {
   display: inline-block;
@@ -951,7 +951,7 @@ h5 {
 }
 .dropdown-menu > li > a:focus,
 .dropdown-menu > li > a:hover {
-  color: #F15533;
+  color: #16a48a;
   text-decoration: none;
   background-color: #f5f5f5;
 }
@@ -1162,7 +1162,7 @@ body.mini-navbar .navbar-default .nav > li > .nav-second-level li a {
   position: absolute;
   left: 70px;
   top: 0;
-  background-color: #F15533;
+  background-color: #16a48a;
   padding: 10px 10px 10px 10px;
   font-size: 12px;
 }
@@ -1394,7 +1394,7 @@ body.canvas-menu.mini-navbar .navbar-default .nav li .profile-element a span {
 }
 body.canvas-menu nav.navbar-static-side {
   z-index: 2001;
-  background: #F15533;
+  background: #16a48a;
   height: 100%;
   position: fixed;
   display: none;
@@ -2164,19 +2164,19 @@ button.dim:active:before {
 }
 /* TOOLTIPS */
 .tooltip-inner {
-  background-color: #F15533;
+  background-color: #16a48a;
 }
 .tooltip.top .tooltip-arrow {
-  border-top-color: #F15533;
+  border-top-color: #16a48a;
 }
 .tooltip.right .tooltip-arrow {
-  border-right-color: #F15533;
+  border-right-color: #16a48a;
 }
 .tooltip.bottom .tooltip-arrow {
-  border-bottom-color: #F15533;
+  border-bottom-color: #16a48a;
 }
 .tooltip.left .tooltip-arrow {
-  border-left-color: #F15533;
+  border-left-color: #16a48a;
 }
 /* EASY PIE CHART*/
 .easypiechart {
@@ -4320,7 +4320,7 @@ samp {
   padding: 12px 10px;
   margin: 0;
   border-radius: 0;
-  background: #F15533;
+  background: #16a48a;
   color: #fff;
   text-align: center;
   border-right: 1px solid #334556;
@@ -4393,12 +4393,12 @@ samp {
 }
 body {
   font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  /* background-color: #F15533; */
+  /* background-color: #16a48a; */
   font-size: 13px;
   color: #676a6c;
   overflow-x: hidden;
-  background: rgb(154,49,26);
-background: linear-gradient(90deg, rgba(154,49,26,1) 0%, rgba(241,85,51,1) 35%, rgba(255,108,75,1) 100%);
+  background: #16a48a;
+    background: linear-gradient(90deg, #16a48a 0%,  #1c8dc5 35%, #16a48a 100%);
 }
 html,
 body {
@@ -4409,7 +4409,7 @@ body.full-height-layout #page-wrapper {
   height: 100%;
 }
 #page-wrapper {
- 
+
   min-height: auto;
 
 }
@@ -4417,7 +4417,7 @@ body.boxed-layout {
   background: url('patterns/shattered.png');
 }
 body.boxed-layout #wrapper {
-  background-color: #F15533;
+  background-color: #16a48a;
   max-width: 1200px;
   margin: 0 auto;
   -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.75);
@@ -4550,7 +4550,7 @@ video {
 }
 /* WRAPPERS */
 #wrapper {
- 
+
   width: 100%;
   overflow-x: hidden;
 }
@@ -6408,7 +6408,7 @@ dd.project-people {
 .article h1 {
   font-size: 48px;
   font-weight: 700;
-  color: #F15533;
+  color: #16a48a;
 }
 .article p {
   font-size: 15px;
@@ -6779,7 +6779,7 @@ body.body-small .vote-icon {
   display: block;
 }
 .small-chat-box .heading {
-  background: #F15533;
+  background: #16a48a;
   padding: 8px 15px;
   font-weight: bold;
   color: #fff;
@@ -8779,7 +8779,7 @@ body.rtls.top-navigation .footer.fixed {
   background: #0e9aef !important;
 }
 .skin-1 .nav-header {
-  background-color: #F15533;
+  background-color: #16a48a;
   background-image: url('patterns/header-profile-skin-1.png');
 }
 .skin-1.mini-navbar .nav-second-level {
@@ -8885,7 +8885,7 @@ body.skin-2 {
   background: #23c6c8 !important;
 }
 .skin-2 .nav-header {
-  background-color: #F15533;
+  background-color: #16a48a;
   background-image: url('patterns/header-profile-skin-2.png');
 }
 .skin-2.mini-navbar .nav-second-level {
@@ -9581,13 +9581,13 @@ body.md-skin {
 
 .fondo-menu{
   background: rgb(154,49,26);
-background: linear-gradient(90deg, rgba(154,49,26,1) 0%, rgba(241,85,51,1) 35%, rgba(255,108,75,1) 100%);
+background: linear-gradient(90deg, rgba(#0d8ddb) 0%, rgba(#16987e) 35%, rgba(255,108,75,1) 100%);
 }
 
 .sticky{
-  
+
   position: fixed;
   z-index: 1;
 
- 
+
 }

@@ -3,7 +3,7 @@
         <x-slot name="logo" >
             {{-- <x-jet-authentication-card-logo /> --}}
             <img class="rounded-full object-cover animate__animated animate__fadeInDown animate__fadeInLeft" height="300px" width="300px"
-                                        src="{{  asset('img/LOGO_VALENCIA.jpg') }}"/ >
+                                        src="{{  asset('img/GALCA.jpeg') }}"/ >
         </x-slot>
 
         <x-jet-validation-errors class="mb-4 " />
@@ -41,7 +41,7 @@
                     </a>
                 @endif
 
-                <x-jet-button class="ml-4" style="background-color:#F15533 ;">
+                <x-jet-button class="ml-4" style="background-color:#16a48a ;">
                     {{ __('Entrar') }}
                 </x-jet-button>
             </div>
