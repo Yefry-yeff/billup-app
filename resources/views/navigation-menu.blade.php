@@ -11,7 +11,7 @@
                     <a href="{{ route('dashboard') }}">
                         {{-- <x-jet-application-mark class="block h-9 w-auto" /> --}}
                         <img class="animate__animated animate__bounceIn  rounded-full object-cover " style="width:5rem"
-                            src="{{ asset('img/GALCA.jpeg') }}" />  PRUEBAS DE REPOSITORIO
+                            src="{{ asset('img/GALCA.jpeg') }}" /> 
                     </a>
 
                 </div>
