@@ -19,7 +19,7 @@
             margin: -45px;
             padding: 0px;
             background-image: url('img/membrete/membrete2.jpg');
-            
+
             background-size: 200% 200%;
             background-size: cover;
 
@@ -36,7 +36,7 @@
         th, td {
         text-align: left;
         padding: 2px;
-       
+
         }
 
         thead {
@@ -47,7 +47,7 @@
 
         .letra {
             font-weight: 800;
-           
+
 
         }
     </style>
@@ -68,7 +68,7 @@
             <div class="card-header">
                 <b>Factura No. {{$cai->numero_factura}} </b>
                 <b style="position:absolute;right: 10px" >Factura de: {{$cai->descripcion}}</b>
-            </div> 
+            </div>
 
             <div class="card-body">
                 <p class="card-text" style="position:absolute;left:20px;  top:50px;"><b>Reistro tributario:
@@ -86,7 +86,7 @@
             <div class="card-body">
                 <p class="card-text" style="position:absolute;left:20px;  top:10px;"><b>Cliente: </b>{{$cliente->nombre}}</p>
                 <p class="card-text" style="position:absolute;left:20px;  top:29px;font-size: 9px; max-width:500px"><b>Dirección:</b> {{$cliente->direccion}}</p>
-                
+
                 <p class="card-text" style="position:absolute;left:20px;  top:47px;"><b>Correo:</b> {{$cliente->correo}}
                 </p>
                 <p class="card-text" style="position:absolute;left:20px;  top:70px;"><b>Notas:</b> </p>
@@ -122,7 +122,7 @@
                     <thead>
                     <tr>
                       <th>Código</th>
-                      <th>Descripción</th>                    
+                      <th>Descripción</th>
                       <th>Bodega</th>
                       <th>Seccion</th>
                       <th>Medida</th>
@@ -135,7 +135,7 @@
                     @foreach ($productos as $producto)
                     <tr>
                         <td>{{$producto->codigo}}</td>
-                        <td>{{$producto->descripcion}}</td>                      
+                        <td>{{$producto->descripcion}}</td>
                         <td>{{$producto->bodega}}</td>
                         <td>{{$producto->seccion}}</td>
                         <td>{{$producto->medida}}</td>
@@ -152,7 +152,7 @@
 
 
 
-                </tbody>      
+                </tbody>
                   </table>
             </div>
         </div>
@@ -163,25 +163,28 @@
                  $altura2 = 530;
             @endphp
            <div style="page-break-after: always"></div>
-            
+
        @else
        @php
        $altura = 20;
        @endphp
 
        @endif
-            
-   
 
-        
-      
+
+
+
+
+
+
+
         <div style=" position: relative; margin-left:44px;">
             <div class="card border border-dark" style="position:absolute;left:0px; margin-top:{{$altura}}px;   width:26rem; height:15rem;">
                 <div class="card-body">
-              
+
                     <p class="card-text" style="position:absolute;left:10px;  top:2px; font-size:14px;"><b>Vendedor: </b>
                         {{$cai->name}} </p>
-                
+
                     {{-- <p class="card-text" style="position:absolute;left:10px;  top:18px; font-size:14px"><b>Repartidor: </b>
                         NULL</p> --}}
 
@@ -192,8 +195,8 @@
                         <p class="letra" style="position:absolute; right:10px;  top:2px; font-size:10px;">2</p>
                         @endif     -->
 
-                       
-                        
+
+
                     <p class="card-text" style="position:absolute;left:0px;  top:28px; font-size:11px;">
                         ____________________________________________________________________</p>
                     <p class="card-text" style="position:absolute;left:10px;  top:40px; font-size:11px;">1. por cada cheque
@@ -213,24 +216,24 @@
                         legales y somete a la jurisdicción de tegucigalpa municipio del distrito central.</p>
                     <p class="card-text" style="position:absolute;left:10px;  top:205px; font-size:11px">7. las entregas y
                         creditos para cuentas con facturas vencidas serán congeladas hasta el pago de las mismas haya sido
-                        efectuado en su totalidad. 
-                        
+                        efectuado en su totalidad.
+
                         @if($cai->estado_factura==1)
                         <span style = "font-size: 10px">N{{$cai->numero}}-CF11</span></p>
                         @else
                         <span style = "font-size: 10px">N{{$cai->numero}}-CF12</span></p>
                         @endif
-                      
+
                     @if($flagCentavos == false)
                     <p class="card-text" style="position:absolute;left:35px;  top:240px; font-size:12px;">"{{$numeroLetras." CON CERO CENTAVOS"}}"</p>
-                        
+
                     @else
                     <p class="card-text" style="position:absolute;left:35px;  top:240px; font-size:12px;">"{{$numeroLetras }}"</p>
                     @endif
-                    
+
                 </div>
             </div>
-    
+
             <div class="card border border-dark"
                 style="position:absolute;left:430px; margin-top:{{$altura}}px;   width:18rem; height:15rem;">
                 <div class="card-body">
@@ -238,37 +241,37 @@
                         <p class="card-text " style="position:absolute; left:10px;  top:10px; font-size:16px;">Importe
                             exonerado:</p>
                         <p class="card-text" style="position:absolute;  right:10px;  top:10px; font-size:16px;">0.00</p>
-                    </div> 
+                    </div>
                     <div>
                         <p class="card-text" style="position:absolute; left:10px;  top:28px; font-size:16px;">Importe Gravado: </p>
                         <p class="card-text" style="position:absolute; right:10px;  top:28px; font-size:16px;">0.00</p>
-                    </div>   
+                    </div>
 
                     <div>
                         <p class="card-text" style="position:absolute; left:10px;  top:46px; font-size:16px;">Importe Exento:  </p>
                         <p class="card-text" style="position:absolute; right:10px;  top:46px; font-size:16px;">0.00</p>
                     </div>
 
-    
+
                     {{-- <p class="card-text" style="position:absolute; left:10px;  top:65px; font-size:16px;">Total Importe:
                     </p>
                     <p class="card-text" style="position:absolute; left:200px;  top:65px; font-size:16px;">1200.00</p> --}}
-    
+
                     <p class="card-text" style="position:absolute; left:10px;  top:85px; font-size:16px;">Desc. y Rebajas:
                     </p>
                     <p class="card-text" style="position:absolute; right:10px;  top:85px; font-size:16px;">0.00</p>
-    
+
                     <p class="card-text" style="position:absolute; left:10px;  top:105px; font-size:16px;">Sub Total:</p>
                     <p class="card-text" style="position:absolute; right:10px;  top:105px; font-size:16px;">{{$importesConCentavos->sub_total}}</p>
-    
+
                     <p class="card-text" style="position:absolute; left:10px;  top:130px; font-size:16px;">Impuesto sobre
                         venta:</p>
                     <p class="card-text" style="position:absolute; right:10px;  top:130px; font-size:16px;">{{$importesConCentavos->isv}}</p>
-    
+
                     <p class="card-text" style="position:absolute; left:10px;  top:148px; font-size:16px;">Impuesto sobre
                         bebida:</p>
                     <p class="card-text" style="position:absolute; right:10px;  top:148px; font-size:16px;">0.00</p>
-    
+
                     <p class="card-text" style="position:absolute; left:10px;  top:185px; font-size:18px;"><b>Total a
                             Pagar: </b></p>
                     <p class="card-text" style="position:absolute; right:10px;  top:185px; font-size:18px;"><b>{{$importesConCentavos->total}}</b>
@@ -295,7 +298,7 @@
         @endif
 
 
-           
+
 
 
 
