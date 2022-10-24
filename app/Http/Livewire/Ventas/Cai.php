@@ -46,7 +46,7 @@ class Cai extends Component
     
                         '
                         <div class="btn-group ">
-                            <button data-toggle="dropdown" class="btn btn-warning dropdown-toggle" aria-expanded="false">Ver más</button>
+                            <button data-toggle="dropdown" disabled class="btn btn-warning dropdown-toggle " aria-expanded="false">Ver más</button>
                                 <ul class="dropdown-menu" x-placement="bottom-start"
                                     style="position: absolute; top: 33px; left: 0px; will-change: top, left;">
 

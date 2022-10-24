@@ -58,7 +58,7 @@ class ListadoFacturas extends Component
             inner join cai A
             on factura.cai_id= A.id
             cross join (select @i := 0) r
-        where ( YEAR(factura.created_at) >= (YEAR(NOW())-2) )and factura.estado_factura_id=1 and factura.estado_venta_id<>2 and (factura.tipo_venta_id = 1)
+        where ( YEAR(factura.created_at) >= (YEAR(NOW())-2) )and factura.estado_factura_id=1 and factura.estado_venta_id<>2 and (factura.tipo_venta_id = 2)
         order by factura.created_at desc
             ");
 

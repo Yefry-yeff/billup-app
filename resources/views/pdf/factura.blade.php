@@ -18,7 +18,6 @@
         body {
             margin: -45px;
             padding: 0px;
-            background-image: url('img/membrete/membrete2.jpg');
             
             background-size: 200% 200%;
             background-size: cover;
@@ -282,7 +281,7 @@
                 <p class="card-text" style="position:absolute;left:450px;  top:10px;">
                     _______________________________________</p>
                 <p class="card-text" style="position:absolute;left:80px;  top:25px; ">{{ strtoupper($cliente->nombre) }}</p>
-                <p class="card-text" style="position:absolute;left:495px;  top:25px;">DISTRIBUCIONES VALENCIA</p>
+                <p class="card-text" style="position:absolute;left:495px;  top:25px;">GRUPO ALCA</p>
             </div>
 
 

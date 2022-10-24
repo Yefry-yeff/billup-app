@@ -133,7 +133,7 @@
                 <a href="#" class="btn add-btn btn-primary" data-toggle="modal"
                     data-target="#modal_cai_crear_facturacion"><i class="fa fa-plus"></i> Añadir CAI Facturación</a>
             </div>
-            <div style="margin-top: 1.5rem">
+            {{--<div style="margin-top: 1.5rem">
                 <a href="#" class="btn add-btn btn-primary" data-toggle="modal"
                     data-target="#modal_cai_crear_credito"><i class="fa fa-plus"></i> Añadir CAI Nota Crédito</a>
             </div>
@@ -143,7 +143,7 @@
             </div>
             <div style="margin-top: 1.5rem">
                 <a href="#" class="btn add-btn btn-primary" data-toggle="modal"
-                    data-target="#modal_cai_crear_devolucion"><i class="fa fa-plus"></i> Añadir CAI Devolución Crédito</a>
+                    data-target="#modal_cai_crear_devolucion"><i class="fa fa-plus"></i> Añadir CAI Devolución Crédito</a>--}}
             </div>
         </div>
 
@@ -356,7 +356,10 @@
          
          $(document).on('submit', '#crearCAIFacturacionForm', function(event) {
             event.preventDefault();
-            if (verificacionCAI()) {
+            
+            //let verf = await verificacionCAI();
+            //console.log(verificacionCAI());
+            if (true) {
                 guardarCaiFacturacion();
             }else{
 
@@ -550,15 +553,15 @@
             }
 
             //////////////////////////////////////////////////////////////////////////////////
-             function verificacionCAI(){
+             async function verificacionCAI(){
                
             
                 axios.get('/cai/verificacion')
                 .then( response =>{
 
                     
-                    
-                    return response;
+                    console.log(response.data.permiso);
+                    return response.data.permiso;
 
                    
 

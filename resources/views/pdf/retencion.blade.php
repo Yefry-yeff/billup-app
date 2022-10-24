@@ -13,7 +13,6 @@
         body {
             margin: -45px;
             padding: 0px;
-            background-image: url('img/membrete/membrete2.jpg');
             background-repeat: no-repeat;
             background-size: 200% 200%;
             background-size: cover;

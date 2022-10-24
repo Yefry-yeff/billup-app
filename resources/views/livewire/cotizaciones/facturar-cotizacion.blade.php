@@ -117,7 +117,13 @@
                                         data-parsley-required readonly>
 
                                 </div>
+ <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                                          <label for="vendedor">Seleccionar Vendedor:<span class="text-danger">*</span> </label>
+                                          <select name="vendedor" id="vendedor" class="form-group form-control" required>
+                                            <option value="" selected disabled>--Seleccionar un vendedor--</option>
+                                          </select>
 
+                                    </div>
                                 <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
                                     <label class="col-form-label focus-label">RTN:<span class="text-danger">*</span></label>
                                     <input class="form-control"  type="text" id="rtn_ventas" name="rtn_ventas" value="{{$cotizacion->RTN}}"
@@ -409,7 +415,22 @@
             
             
           
+            $('#vendedor').select2({
+                ajax:{
+                    url:'/ventas/corporativo/vendedores',
+                    data: function(params) {
+                        var query = {
+                            search: params.term,
+                            type: 'public',
+                            page: params.page || 1
+                        }
 
+                        // Query parameters will be ?search=[term]&type=public
+                        return query;
+                    }
+
+                }
+            });
 
            
 

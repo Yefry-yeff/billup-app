@@ -18,7 +18,6 @@
         body {
             margin: -45px;
             padding: 0px;
-            background-image: url('img/membrete/membrete2.jpg');
             
             background-size: 200% 200%;
             background-size: cover;
@@ -286,7 +285,7 @@
                     _______________________________________</p>
                 <p class="card-text" style="position:absolute;left:20px;  top:25px; ">FACTURA N 010-001-01-00418759 /
                     16/12/2021</p>
-                <p class="card-text" style="position:absolute;left:495px;  top:25px;">DISTRIBUCIONES VALENCIA</p>
+                <p class="card-text" style="position:absolute;left:495px;  top:25px;">GRUPO ALCA</p>
             </div>
         </div>
 
