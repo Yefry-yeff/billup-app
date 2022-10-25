@@ -317,19 +317,22 @@
 
                     <ul class="nav nav-second-level">
                         <li><a href="/ventas/coporativo" style="color:#ffffff;">Facturacion</a></li>
-                        <li><a href="/ventas/sin/restriccion/precio" style="color:#ffffff;">Facturacion SR/P</a></li>
+                        <li><a href="/facturas/corporativo/vendedor" style="color:#ffffff;">Listado de Facturas </a>
+                            <li><a href="/ventas/anulado/corporativo" style="color:#ffffff;">Listado de Facturas Anuladas
+                            </a></li>
+                        {{--  <li><a href="/ventas/sin/restriccion/precio" style="color:#ffffff;">Facturacion SR/P</a></li>  --}}
 
                         <li><a href="/proforma/cotizacion/1" style="color:#ffffff;">Cotización </a></li>
                         <li><a href="/cotizacion/listado/corporativo" style="color:#ffffff;">Listado de
                             Cotizaciones</a></li>
 
                         @if(Auth::user()->rol_id == '2'  )
-
-                        <li><a href="/facturas/corporativo/vendedor" style="color:#ffffff;">Listado de Facturas </a>
+{{--  LINEAS COMENTADAS  --}}
+                        {{--  <li><a href="/facturas/corporativo/vendedor" style="color:#ffffff;">Listado de Facturas </a>  --}}
 
                         @else
-                        <li><a href="/facturas/corporativo" style="color:#ffffff;">Listado de Facturas</a></li>
-                        <li><a href="/facturas/corporativo/lista" style="color:#ffffff;">Listado de Facturas ND</a></li>
+                        {{--  <li><a href="/facturas/corporativo" style="color:#ffffff;">Listado de Facturas</a></li>
+                        <li><a href="/facturas/corporativo/lista" style="color:#ffffff;">Listado de Facturas ND</a></li>  --}}
 
                         @endif
 
@@ -340,7 +343,7 @@
                             </a></li>
 
                         <li><a href="/ventas/cai" style="color:#ffffff;">CAI</a></li>
-                        <li><a href="/ventas/motivo_credito" style="color:#ffffff;">Motivo Nota de Crédito</a></li>
+                      {{--    <li><a href="/ventas/motivo_credito" style="color:#ffffff;">Motivo Nota de Crédito</a></li>  --}}
                         {{-- <li><a href="/ventas/cuentas_por_cobrar" style="color:#ffffff;">Cuentas Por Cobrar</a></li>
                         <li><a href="/ventas/historico_precios_cliente" style="color:#ffffff;">Historico de Precios</a></li> --}}
 
