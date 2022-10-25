@@ -184,26 +184,6 @@ class FacturacionCorporativa extends Component
          limit 15
          ");
 
-
-/*          select
-         B.id,
-         concat('cod ',B.id,' - ',B.nombre,' - ','cantidad ',sum(A.cantidad_disponible)) as text
-      from
-         recibido_bodega A
-         inner join producto B
-         on A.producto_id = B.id
-         inner join seccion
-         on A.seccion_id = seccion.id
-         inner join segmento
-         on seccion.segmento_id = segmento.id
-         inner join bodega
-         on segmento.bodega_id = bodega.id
-      where
-      A.cantidad_disponible <> 0 and
-      (B.nombre LIKE '%" . $request->search . "%' or B.id LIKE '%" . $request->search . "%')
-      group by A.producto_id
-      limit 15 */
-
             return response()->json([
                 "results" => $listaProductos
             ], 200);
