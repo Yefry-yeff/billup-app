@@ -18,13 +18,11 @@
         body {
             margin: -45px;
             padding: 0px;
-            background-image: url('img/membrete/membrete2.jpg');
+        }
 
-            background-size: 200% 200%;
-            background-size: cover;
+        #cuerpo {
 
-            width: 115% !important;
-
+            image: url('img/GALCA.jpeg');
         }
 
         table {
@@ -56,250 +54,247 @@
 
 <body>
 
-@php
-    $altura =20;
-    $altura2 = 320;
-    $contadorFilas = 0;
-@endphp
+    <div id="cuerpo">
+        @php
+            $altura =20;
+            $altura2 = 320;
+            $contadorFilas = 0;
+        @endphp
 
 
-    <div class="pruebaFondo">
-        <div class="card border border-dark" style="margin-left:44px;  margin-top:150px; width:45rem; height:5.5rem;">
-            <div class="card-header">
-                <b>Factura No. {{$cai->numero_factura}} </b>
-                <b style="position:absolute;right: 10px" >Factura de: {{$cai->descripcion}}</b>
-            </div>
+            <div {{--  class="card border border-dark"  --}} style="margin-left:44px;  margin-top:150px; width:45rem; height:5.5rem; ">
+                <div class="card-header">
+                    <b>Factura No. {{$cai->numero_factura}} </b>
+                    <b style="position:absolute;right: 10px" >Factura de: {{$cai->descripcion}}</b>
+                </div>
 
-            <div class="card-body">
-                <p class="card-text" style="position:absolute;left:20px;  top:50px;"><b>Reistro tributario:
-                        08011986138652</b></p>
-                <p class="card-text" style="position:absolute;left:420px;  top:50px;"><b>CAI:
-                        {{$cai->cai}}</b></p>
-                <p class="card-text" style="position:absolute;left:20px;  top:65px;"><b>Fecha límite de emisión:
-                        {{$cai->fecha_limite_emision}}</b></p>
-                <p class="card-text" style="position:absolute;left:340px;  top:65px;"><b>Rango autorizado:
-                        {{$cai->numero_inicial}} - {{$cai->numero_final}}</b></p>
-            </div>
-        </div>
-
-        <div class="card border border-dark"   style="margin-left:44px; margin-top:10px; width:45rem; height:10.5rem;">
-            <div class="card-body">
-                <p class="card-text" style="position:absolute;left:20px;  top:10px;"><b>Cliente: </b>{{$cliente->nombre}}</p>
-                <p class="card-text" style="position:absolute;left:20px;  top:29px;font-size: 9px; max-width:500px"><b>Dirección:</b> {{$cliente->direccion}}</p>
-
-                <p class="card-text" style="position:absolute;left:20px;  top:47px;"><b>Correo:</b> {{$cliente->correo}}
-                </p>
-                <p class="card-text" style="position:absolute;left:20px;  top:70px;"><b>Notas:</b> </p>
-
-
-                <p class="card-text "  style="position:absolute;left:20px;  top:120px;"><b>Correlativo de Ord. excenta</b>
-                </p>
-                <p class="card-text" style="position:absolute;left:250px;  top:120px;"><b>Constancia de registro
-                        exonerado</b></p>
-                <p class="card-text" style="position:absolute;left:500px;  top:120px;"><b>Identificativo del registro de
-                        la SAG</b></p>
-
-
-                <p class="card-text" style="position:absolute;left:520px;  top:10px;"><b>Fecha:</b> {{$cai->fecha_emision}}</p>
-                <p class="card-text" style="position:absolute;left:520px;  top:25px;"><b>Hora:</b> {{$cai->hora}}</p>
-                <p class="card-text" style="position:absolute;left:520px;  top:40px;"><b>Vence:</b> {{$cai->fecha_vencimiento}}</p>
-                <p class="card-text" style="position:absolute;left:520px;  top:57px;"><b>RTN:</b> {{$cliente->rtn}}</p>
-                <p class="card-text" style="position:absolute;left:520px;  top:72px;"><b>Orden N°:</b> {{$ordenCompra['numero_orden']}}
-                </p>
-
-
-
-                <p class="card-text" style="position:absolute;left:270px;  top:45px;"><b>Teléfono:</b> {{$cliente->telefono_empresa}}
-                </p>
-            </div>
-        </div>
-
-        <div class="card border border-dark" style="position: relative; margin-left:44px; margin-top:10px; width:45rem; page-break-inside: auto;">
-            <div >
-
-
-                <table  class="" style="font-size: 11px; ">
-                    <thead>
-                    <tr>
-                      <th>Código</th>
-                      <th>Descripción</th>
-                      <th>Bodega</th>
-                      <th>Seccion</th>
-                      <th>Medida</th>
-                      <th>Precio </th>
-                      <th>Cantidad</th>
-                      <th>Importe</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($productos as $producto)
-                    <tr>
-                        <td>{{$producto->codigo}}</td>
-                        <td>{{$producto->descripcion}}</td>
-                        <td>{{$producto->bodega}}</td>
-                        <td>{{$producto->seccion}}</td>
-                        <td>{{$producto->medida}}</td>
-                        <td>{{$producto->precio}}</td>
-                        <td>{{$producto->cantidad}}</td>
-                        <td>{{$producto->importe}}</td>
-                    </tr>
-                    @php
-                    $contadorFilas++;
-                    @endphp
-
-                    @endforeach
-
-
-
-
-                </tbody>
-                  </table>
-            </div>
-        </div>
-
-        @if($contadorFilas>4 and $contadorFilas<24)
-           @php
-                 $altura = 170;
-                 $altura2 = 530;
-            @endphp
-           <div style="page-break-after: always"></div>
-
-       @else
-       @php
-       $altura = 20;
-       @endphp
-
-       @endif
-
-
-
-
-
-
-
-
-        <div style=" position: relative; margin-left:44px;">
-            <div class="card border border-dark" style="position:absolute;left:0px; margin-top:{{$altura}}px;   width:26rem; height:15rem;">
                 <div class="card-body">
+                    <p class="card-text" style="position:absolute;left:20px;  top:50px;"><b>Reistro tributario:
+                            08019020234099</b></p>
+                    <p class="card-text" style="position:absolute;left:420px;  top:50px;"><b>CAI:
+                            {{$cai->cai}}</b></p>
+                    <p class="card-text" style="position:absolute;left:20px;  top:65px;"><b>Fecha límite de emisión:
+                            {{$cai->fecha_limite_emision}}</b></p>
+                    <p class="card-text" style="position:absolute;left:340px;  top:65px;"><b>Rango autorizado:
+                            {{$cai->numero_inicial}} - {{$cai->numero_final}}</b></p>
+                </div>
+            </div>
 
-                    <p class="card-text" style="position:absolute;left:10px;  top:2px; font-size:14px;"><b>Vendedor: </b>
-                        {{--  {{$cai->name}}  --}} </p>
+            <div class="card border border-dark"   style="margin-left:44px; margin-top:10px; width:45rem; height:10.5rem; background: transparent;">
+                <div class="card-body">
+                    <p class="card-text" style="position:absolute;left:20px;  top:10px;"><b>Cliente: </b>{{$cliente->nombre}}</p>
+                    <p class="card-text" style="position:absolute;left:20px;  top:29px;font-size: 9px; max-width:500px"><b>Dirección:</b> {{$cliente->direccion}}</p>
 
-                    {{-- <p class="card-text" style="position:absolute;left:10px;  top:18px; font-size:14px"><b>Repartidor: </b>
-                        NULL</p> --}}
+                    <p class="card-text" style="position:absolute;left:20px;  top:47px;"><b>Correo:</b> {{$cliente->correo}}
+                    </p>
+                    <p class="card-text" style="position:absolute;left:20px;  top:70px;"><b>Notas:</b> </p>
 
 
-                        <!-- @if($cai->factura == 1)
-                        <p class="letra" style="position:absolute; right:10px;  top:2px; font-size:10px;">1</p>
+                    <p class="card-text "  style="position:absolute;left:20px;  top:120px;"><b>Correlativo de Ord. excenta</b>
+                    </p>
+                    <p class="card-text" style="position:absolute;left:250px;  top:120px;"><b>Constancia de registro
+                            exonerado</b></p>
+                    <p class="card-text" style="position:absolute;left:500px;  top:120px;"><b>Identificativo del registro de
+                            la SAG</b></p>
+
+
+                    <p class="card-text" style="position:absolute;left:520px;  top:10px;"><b>Fecha:</b> {{$cai->fecha_emision}}</p>
+                    <p class="card-text" style="position:absolute;left:520px;  top:25px;"><b>Hora:</b> {{$cai->hora}}</p>
+                    <p class="card-text" style="position:absolute;left:520px;  top:40px;"><b>Vence:</b> {{$cai->fecha_vencimiento}}</p>
+                    <p class="card-text" style="position:absolute;left:520px;  top:57px;"><b>RTN:</b> {{$cliente->rtn}}</p>
+                    <p class="card-text" style="position:absolute;left:520px;  top:72px;"><b>Orden N°:</b> {{$ordenCompra['numero_orden']}}
+                    </p>
+
+
+
+                    <p class="card-text" style="position:absolute;left:270px;  top:45px;"><b>Teléfono:</b> {{$cliente->telefono_empresa}}
+                    </p>
+                </div>
+            </div>
+
+            <div class="card border border-dark" style="position: relative; margin-left:44px; margin-top:10px; width:45rem; page-break-inside: auto; background: transparent;">
+                <div >
+
+
+                    <table  class="" style="font-size: 11px; ">
+                        <thead>
+                        <tr>
+                        <th>Código</th>
+                        <th>Descripción</th>
+                        <th>Bodega</th>
+                        <th>Seccion</th>
+                        <th>Medida</th>
+                        <th>Precio </th>
+                        <th>Cantidad</th>
+                        <th>Importe</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($productos as $producto)
+                        <tr>
+                            <td>{{$producto->codigo}}</td>
+                            <td>{{$producto->descripcion}}</td>
+                            <td>{{$producto->bodega}}</td>
+                            <td>{{$producto->seccion}}</td>
+                            <td>{{$producto->medida}}</td>
+                            <td>{{$producto->precio}}</td>
+                            <td>{{$producto->cantidad}}</td>
+                            <td>{{$producto->importe}}</td>
+                        </tr>
+                        @php
+                        $contadorFilas++;
+                        @endphp
+
+                        @endforeach
+
+
+
+
+                    </tbody>
+                    </table>
+                </div>
+            </div>
+
+            @if($contadorFilas>4 and $contadorFilas<24)
+            @php
+                    $altura = 170;
+                    $altura2 = 530;
+                @endphp
+            <div style="page-break-after: always"></div>
+
+            @else
+            @php
+            $altura = 20;
+            @endphp
+
+            @endif
+
+
+            <div style=" position: relative; margin-left:44px;">
+
+
+
+                <div class="card border border-dark"
+                    style="position:absolute;left:0px; margin-top:{{$altura}}px;   width:45rem; height:15rem; background: transparent;">
+                    <div class="card-body">
+                        <div>
+                            <p class="card-text" style="position:absolute;left:280px;  top:2px; font-size:14px;"><b>Vendedor: </b>
+                                {{$cai->name}} </p>
+                            <p class="card-text " style="position:absolute; left:10px;  top:20px; font-size:12px;">Importe
+                                exonerado:</p>
+                            <p class="card-text" style="position:absolute;  right:10px;  top:20px; font-size:12px;">0.00</p>
+                        </div>
+                        <div>
+                            <p class="card-text" style="position:absolute; left:10px;  top:38px; font-size:12px;">Importe Gravado: </p>
+                            <p class="card-text" style="position:absolute; right:10px;  top:38px; font-size:12px;">0.00</p>
+                        </div>
+
+                        <div>
+                            <p class="card-text" style="position:absolute; left:10px;  top:55px; font-size:12px;">Importe Exento:  </p>
+                            <p class="card-text" style="position:absolute; right:10px;  top:55px; font-size:12px;">0.00</p>
+                        </div>
+
+
+                        {{-- <p class="card-text" style="position:absolute; left:10px;  top:65px; font-size:16px;">Total Importe:
+                        </p>
+                        <p class="card-text" style="position:absolute; left:200px;  top:65px; font-size:16px;">1200.00</p> --}}
+
+                        <p class="card-text" style="position:absolute; left:10px;  top:95px; font-size:12px;">Desc. y Rebajas:
+                        </p>
+                        <p class="card-text" style="position:absolute; right:10px;  top:95px; font-size:12px;">0.00</p>
+
+                        <p class="card-text" style="position:absolute; left:10px;  top:115px; font-size:12px;">Sub Total:</p>
+                        <p class="card-text" style="position:absolute; right:10px;  top:115px; font-size:12px;">{{$importesConCentavos->sub_total}}</p>
+
+                        <p class="card-text" style="position:absolute; left:10px;  top:140px; font-size:12px;">Impuesto sobre
+                            venta:</p>
+                        <p class="card-text" style="position:absolute; right:10px;  top:140px; font-size:12px;">{{$importesConCentavos->isv}}</p>
+
+                        <p class="card-text" style="position:absolute; left:10px;  top:158px; font-size:12px;">Impuesto sobre
+                            bebida:</p>
+                        <p class="card-text" style="position:absolute; right:10px;  top:158px; font-size:12px;">0.00</p>
+
+                        <p class="card-text" style="position:absolute; left:10px;  top:195px; font-size:14px;"><b>Total a
+                                Pagar: </b></p>
+                        <p class="card-text" style="position:absolute; right:10px;  top:195px; font-size:14px;"><b>{{$importesConCentavos->total}}</b>
+                        </p>
+                    </div>
+                </div>
+
+
+                {{--  <div class="card border border-dark" style="position:absolute;left:0px; margin-top:{{$altura}}px;   width:26rem; height:15rem;">
+                    <div class="card-body">
+
+                        <p class="card-text" style="position:absolute;left:10px;  top:2px; font-size:14px;"><b>Vendedor: </b>
+                            {{$cai->name}} </p>
+
+                        <p class="card-text" style="position:absolute;left:10px;  top:18px; font-size:14px"><b>Repartidor: </b>
+                            NULL</p>
+
+
+                            <!-- @if($cai->factura == 1)
+                            <p class="letra" style="position:absolute; right:10px;  top:2px; font-size:10px;">1</p>
+                            @else
+                            <p class="letra" style="position:absolute; right:10px;  top:2px; font-size:10px;">2</p>
+                            @endif     -->
+
+
+
+                        <p class="card-text" style="position:absolute;left:0px;  top:28px; font-size:11px;">
+                            ____________________________________________________________________</p>
+
+                        <p class="card-text" style="position:absolute;left:10px;  top:40px; font-size:11px;">1. por cada cheque
+                            devuelto se cobra 750 lempiras.</p>
+                        <p class="card-text" style="position:absolute;left:10px;  top:51px; font-size:11px">2. toda cuenta
+                            vencida pagara el 3.5% de interés mensual.</p>
+                        <p class="card-text" style="position:absolute;left:10px;  top:63px; font-size:11px">3. el único
+                            comprobante de pago de ésta factura es el emitido por distribuciones valencia.</p>
+                        <p class="card-text" style="position:absolute;left:10px;  top:95px; font-size:11px">4 no se aceptan
+                            reclamos ni devoluciones después de 10 días.</p>
+                        <p class="card-text" style="position:absolute;left:10px;  top:110px; font-size:11px">5. la firma del
+                            cliente o representante en la factura, da por hecho que acepta y obliga a este a cumplir con todas
+                            las condiciones estipuladas.</p>
+                        <p class="card-text" style="position:absolute;left:10px;  top:143px; font-size:11px">6. el cliente
+                            debera realizar el pago de la factura a su fecha de vencimiento, en caso de incumplimiento de pago,
+                            este se compromete a aceptar otros procesos de cobrosm a la vez renuncia a su domicilio para efectos
+                            legales y somete a la jurisdicción de tegucigalpa municipio del distrito central.</p>
+                        <p class="card-text" style="position:absolute;left:10px;  top:205px; font-size:11px">7. las entregas y
+                            creditos para cuentas con facturas vencidas serán congeladas hasta el pago de las mismas haya sido
+                            efectuado en su totalidad.
+
+                                                                            @if($cai->estado_factura==1)
+                            <span style = "font-size: 10px">N{{$cai->numero}}-CF11</span></p>
+                            @else
+                            <span style = "font-size: 10px">N{{$cai->numero}}-CF12</span></p>
+                            @endif
+
+                        @if($flagCentavos == false)
+                        <p class="card-text" style="position:absolute;left:35px;  top:240px; font-size:12px;">"{{$numeroLetras." CON CERO CENTAVOS"}}"</p>
+
                         @else
-                        <p class="letra" style="position:absolute; right:10px;  top:2px; font-size:10px;">2</p>
-                        @endif     -->
-
-
-
-                    <p class="card-text" style="position:absolute;left:0px;  top:28px; font-size:11px;">
-                        ____________________________________________________________________</p>
-                    <p class="card-text" style="position:absolute;left:10px;  top:40px; font-size:11px;">1. por cada cheque
-                        devuelto se cobra 750 lempiras.</p>
-                    <p class="card-text" style="position:absolute;left:10px;  top:51px; font-size:11px">2. toda cuenta
-                        vencida pagara el 3.5% de interés mensual.</p>
-                    <p class="card-text" style="position:absolute;left:10px;  top:63px; font-size:11px">3. el único
-                        comprobante de pago de ésta factura es el emitido por distribuciones valencia.</p>
-                    <p class="card-text" style="position:absolute;left:10px;  top:95px; font-size:11px">4 no se aceptan
-                        reclamos ni devoluciones después de 10 días.</p>
-                    <p class="card-text" style="position:absolute;left:10px;  top:110px; font-size:11px">5. la firma del
-                        cliente o representante en la factura, da por hecho que acepta y obliga a este a cumplir con todas
-                        las condiciones estipuladas.</p>
-                    <p class="card-text" style="position:absolute;left:10px;  top:143px; font-size:11px">6. el cliente
-                        debera realizar el pago de la factura a su fecha de vencimiento, en caso de incumplimiento de pago,
-                        este se compromete a aceptar otros procesos de cobrosm a la vez renuncia a su domicilio para efectos
-                        legales y somete a la jurisdicción de tegucigalpa municipio del distrito central.</p>
-                    <p class="card-text" style="position:absolute;left:10px;  top:205px; font-size:11px">7. las entregas y
-                        creditos para cuentas con facturas vencidas serán congeladas hasta el pago de las mismas haya sido
-                        efectuado en su totalidad.
-
-                        @if($cai->estado_factura==1)
-                        <span style = "font-size: 10px">N{{$cai->numero}}-CF11</span></p>
-                        @else
-                        <span style = "font-size: 10px">N{{$cai->numero}}-CF12</span></p>
+                        <p class="card-text" style="position:absolute;left:35px;  top:240px; font-size:12px;">"{{$numeroLetras }}"</p>
                         @endif
 
-                    @if($flagCentavos == false)
-                    <p class="card-text" style="position:absolute;left:35px;  top:240px; font-size:12px;">"{{$numeroLetras." CON CERO CENTAVOS"}}"</p>
+                    </div>
+                </div>  --}}
 
-                    @else
-                    <p class="card-text" style="position:absolute;left:35px;  top:240px; font-size:12px;">"{{$numeroLetras }}"</p>
-                    @endif
-
+                <div style="position:absolute;left:0px;  margin-top:{{$altura2}}px;  width:45rem; background: transparent;">
+                    <p class="card-text" style="position:absolute;left:20px;  top:10px;">
+                        _______________________________________</p>
+                    <p class="card-text" style="position:absolute;left:450px;  top:10px;">
+                        _______________________________________</p>
+                    <p class="card-text" style="position:absolute;left:80px;  top:25px; ">{{ strtoupper($cliente->nombre) }}</p>
+                    <p class="card-text" style="position:absolute;left:540px;  top:25px;">GRUPO ALCA</p>
                 </div>
+
+
             </div>
 
-            <div class="card border border-dark"
-                style="position:absolute;left:430px; margin-top:{{$altura}}px;   width:18rem; height:15rem;">
-                <div class="card-body">
-                    <div>
-                        <p class="card-text " style="position:absolute; left:10px;  top:10px; font-size:16px;">Importe
-                            exonerado:</p>
-                        <p class="card-text" style="position:absolute;  right:10px;  top:10px; font-size:16px;">0.00</p>
-                    </div>
-                    <div>
-                        <p class="card-text" style="position:absolute; left:10px;  top:28px; font-size:16px;">Importe Gravado: </p>
-                        <p class="card-text" style="position:absolute; right:10px;  top:28px; font-size:16px;">0.00</p>
-                    </div>
-
-                    <div>
-                        <p class="card-text" style="position:absolute; left:10px;  top:46px; font-size:16px;">Importe Exento:  </p>
-                        <p class="card-text" style="position:absolute; right:10px;  top:46px; font-size:16px;">0.00</p>
-                    </div>
-
-
-                    {{-- <p class="card-text" style="position:absolute; left:10px;  top:65px; font-size:16px;">Total Importe:
-                    </p>
-                    <p class="card-text" style="position:absolute; left:200px;  top:65px; font-size:16px;">1200.00</p> --}}
-
-                    <p class="card-text" style="position:absolute; left:10px;  top:85px; font-size:16px;">Desc. y Rebajas:
-                    </p>
-                    <p class="card-text" style="position:absolute; right:10px;  top:85px; font-size:16px;">0.00</p>
-
-                    <p class="card-text" style="position:absolute; left:10px;  top:105px; font-size:16px;">Sub Total:</p>
-                    <p class="card-text" style="position:absolute; right:10px;  top:105px; font-size:16px;">{{$importesConCentavos->sub_total}}</p>
-
-                    <p class="card-text" style="position:absolute; left:10px;  top:130px; font-size:16px;">Impuesto sobre
-                        venta:</p>
-                    <p class="card-text" style="position:absolute; right:10px;  top:130px; font-size:16px;">{{$importesConCentavos->isv}}</p>
-
-                    <p class="card-text" style="position:absolute; left:10px;  top:148px; font-size:16px;">Impuesto sobre
-                        bebida:</p>
-                    <p class="card-text" style="position:absolute; right:10px;  top:148px; font-size:16px;">0.00</p>
-
-                    <p class="card-text" style="position:absolute; left:10px;  top:185px; font-size:18px;"><b>Total a
-                            Pagar: </b></p>
-                    <p class="card-text" style="position:absolute; right:10px;  top:185px; font-size:18px;"><b>{{$importesConCentavos->total}}</b>
-                    </p>
-                </div>
+            @if($cai->estado_venta_id==2)
+            <div>
+                <p class="" style="position:absolute; margin-top:{{$altura2 + 40}}px;  left:80px;   font-size:50px;">--FACTURA ANULADA--</p>
             </div>
-
-            <div style="position:absolute;left:0px;  margin-top:{{$altura2}}px;  width:45rem;">
-                <p class="card-text" style="position:absolute;left:20px;  top:10px;">
-                    _______________________________________</p>
-                <p class="card-text" style="position:absolute;left:450px;  top:10px;">
-                    _______________________________________</p>
-                <p class="card-text" style="position:absolute;left:80px;  top:25px; ">{{ strtoupper($cliente->nombre) }}</p>
-                <p class="card-text" style="position:absolute;left:495px;  top:25px;">DISTRIBUCIONES VALENCIA</p>
-            </div>
-
-
-        </div>
-
-        @if($cai->estado_venta_id==2)
-        <div>
-            <p class="" style="position:absolute; margin-top:{{$altura2 + 40}}px;  left:80px;   font-size:50px;">--FACTURA ANULADA--</p>
-        </div>
-        @endif
-
-
-
-
+            @endif
 
 
     </div>

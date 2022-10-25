@@ -23,7 +23,7 @@ class DetalleVenta extends Component
 
     {
       $idFactura = $this->idVenta;
-        $detalleVenta=DB::SELECTONE("select 
+        $detalleVenta=DB::SELECTONE("select
         A.id,
         A.numero_factura,
         A.cai,
@@ -63,15 +63,15 @@ class DetalleVenta extends Component
       name
       from factura
       inner join users
-      on factura.users_id
+      on factura.users_id = users.id
       where factura.id=".$idFactura
       );
 
       $montoPagado = DB::SELECTONE("
-      select 
+      select
         sum(monto) as monto
-        from 
-        pago_venta 
+        from
+        pago_venta
         where  pago_venta.estado_venta_id=1 and  factura_id = ".$idFactura);
 
       $pendientePago = $detalleVenta->total -  $montoPagado->monto;
@@ -83,19 +83,19 @@ class DetalleVenta extends Component
        try {
 
         $listaProductos = DB::SELECT("
-        
-     select 
+
+     select
         A.id as idFactura,
         C.id as idProducto,
-        C.nombre,  
+        C.nombre,
         E.nombre as unidad,
         B.precio_unidad,
-        B.cantidad,  
-        sum(B.numero_unidades_resta_inventario )as unidades_vendidas,  
+        B.cantidad,
+        sum(B.numero_unidades_resta_inventario )as unidades_vendidas,
         sum(B.sub_total_s) as sub_total,
         sum(B.isv_s) as isv,
         sum(B.total_s) as total
-      
+
       from factura A
         inner join venta_has_producto B
         on A.id = B.factura_id
@@ -107,7 +107,7 @@ class DetalleVenta extends Component
         on E.id = D.unidad_medida_id
         where A.id = ".$id."
       group by B.producto_id,E.nombre,B.precio_unidad, B.cantidad,B.sub_total, B.isv, B.total
-        
+
         ");
         return Datatables::of($listaProductos)
         ->make(true);
@@ -116,7 +116,7 @@ class DetalleVenta extends Component
        ],200);
        } catch (QueryException $e) {
        return response()->json([
-           'message' => 'Ha ocurrido un error', 
+           'message' => 'Ha ocurrido un error',
            'error' => $e
        ],402);
        }
@@ -126,7 +126,7 @@ class DetalleVenta extends Component
        try {
 
         $listado = DB::SELECT("
-        select 
+        select
 
         B.id as idProducto,
         B.nombre as producto,
@@ -137,17 +137,17 @@ class DetalleVenta extends Component
         E.nombre as bodega,
         E.direccion,
         C.descripcion as seccion,
-        
+
         (select
         y.nombre
         from unidad_medida_venta x
         inner join unidad_medida y
         on x.unidad_medida_id=y.id
         where  x.unidad_venta_defecto = 1 and x.producto_id = B.id) as unidad_venta_base,
-        
+
         A.numero_unidades_resta_inventario as cantidad_base,
         J.numero_factura
-        
+
         from venta_has_producto A
         inner join producto B
         on A.producto_id = B.id
@@ -173,7 +173,7 @@ class DetalleVenta extends Component
 
        } catch (QueryException $e) {
        return response()->json([
-           'message' => 'Ha ocurrido un error', 
+           'message' => 'Ha ocurrido un error',
            'error' => $e
        ],402);
        }
@@ -183,7 +183,7 @@ class DetalleVenta extends Component
        try {
 
         $listaPagos = DB::SELECT("
-        select 
+        select
         @i := @i + 1 as contador,
         factura.numero_factura,
         pago_venta.monto,
@@ -203,7 +203,7 @@ class DetalleVenta extends Component
         ->make(true);
        } catch (QueryException $e) {
        return response()->json([
-           'message' => 'Ha ocurrido un error', 
+           'message' => 'Ha ocurrido un error',
            'error' => $e
        ],402);
        }
